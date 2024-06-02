@@ -1,26 +1,96 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <NavBar />
+    <div class="container">
+      <LeaderBoard/>
+      <div class="right-panel">
+        <NoticeBoard/>
+        <RealTimeChat/>
+        <NotificationFeed/>
+        <RisingUser/>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import NavBar from './components/NavBar.vue';
+import LeaderBoard from './components/LeaderBoard.vue';
+import NoticeBoard from './components/NoticeBoard.vue';
+import RealTimeChat from './components/RealTimeChat.vue';
+import NotificationFeed from './components/NotificationFeed.vue';
+import RisingUser from './components/RisingUser.vue';
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    NavBar, LeaderBoard, NoticeBoard,
+    RealTimeChat,
+    NotificationFeed,
+    RisingUser
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.right-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #343a40;
+  font-size: 1.2em;
+}
+
+.notification-feed ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notification-feed li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notification-feed li i {
+  color: #007bff;
+}
+
+.notification-feed .time {
+  display: block;
+  color: #868e96;
+  font-size: 0.9em;
 }
 </style>
