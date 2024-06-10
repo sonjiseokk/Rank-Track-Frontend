@@ -2,32 +2,18 @@
   <div>
     <NavBar />
     <div class="container">
-      <LeaderBoard/>
-      <div class="right-panel">
-        <NoticeBoard/>
-        <RealTimeChat/>
-        <NotificationFeed/>
-        <RisingUser/>
-      </div>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
 import NavBar from './components/NavBar.vue';
-import LeaderBoard from './components/LeaderBoard.vue';
-import NoticeBoard from './components/NoticeBoard.vue';
-import RealTimeChat from './components/RealTimeChat.vue';
-import NotificationFeed from './components/NotificationFeed.vue';
-import RisingUser from './components/RisingUser.vue';
 
 export default {
   name: "App",
   components: {
-    NavBar, LeaderBoard, NoticeBoard,
-    RealTimeChat,
-    NotificationFeed,
-    RisingUser
+    NavBar
   }
 };
 </script>
